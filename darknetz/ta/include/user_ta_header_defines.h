@@ -17,7 +17,8 @@
 #define TA_STACK_SIZE			(1 * 1024 * 1024)
 
 /* Provisioned heap size for TEE_Malloc() and friends */
-#define TA_DATA_SIZE			(10 * 1024 * 1024)
+// Modified Part -- Decrease data size 10*1024*1024 to 2*1024*1024
+#define TA_DATA_SIZE			(2 * 1024 * 1024)
 
 /* Extra properties (give a version id and a string name) */
 #define TA_CURRENT_TA_EXT_PROPERTIES \

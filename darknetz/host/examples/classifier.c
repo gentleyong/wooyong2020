@@ -207,7 +207,7 @@ void train_classifier(char *datacfg, char *cfgfile, char *weightfile_o, int *gpu
         if(get_current_batch(net) >= net->max_batches) {
                 net->max_batches = get_current_batch(net) + net->max_batches;
         }
-
+        // Modified Part -- decrease data size to 10000
         while((get_current_batch(net) < net->max_batches || net->max_batches == 0) && *net->seen < 10000) {
                 if(net->random && count++%40 == 0) {
                         printf("Resizing\n");

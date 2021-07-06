@@ -100,9 +100,15 @@ layer_TA make_connected_layer_TA_new(int batch, int inputs, int outputs, ACTIVAT
     l.type = CONNECTED_TA;
 
     l.inputs = inputs;
+
+    /* 
+    if code below "Branched Execution Partitioning" is commented out,
+    Layer Based Partitioning
+    */
+    // Branched Execution Partitioning -- start
     l.inputs= (l.inputs+1)/2;
-    // modified : outputs --> (outputs+1)/2
-    l.outputs = (outputs+1)/2;
+    // Branched Execution Partitioning -- end
+    l.outputs = outputs
     l.batch = batch;
     l.batch_normalize = batch_normalize;
     l.h = 1;
